@@ -43,6 +43,25 @@ public class StackAndQueue{
             }
         }
 
+        //Method to display the stack Peek value
+        public void peek(){
+            if (top == null)
+                System.out.println("Stack is underflow");
+            else
+                System.out.println("Stack Peek value is : " + top.data);
+        }
+
+        //Method to display the stack Pop value
+        public void pop(){
+            if (top == null)
+                System.out.println("Stack is underflow");
+            else{
+                System.out.println("Stack Pooped value is : " + top.data);
+                top = top.next;
+            }
+
+        }
+
         public static void main(String[] args) {
             StackAndQueue stack = new StackAndQueue();
 
@@ -51,8 +70,16 @@ public class StackAndQueue{
             stack.push(30);
             stack.push(56);
 
+
             //Method to display stack in First In Last Out Order
             stack.display();
 
+            //Peak and PoP from the Stack till it is empty
+            while (stack.top != null){
+                stack.peek();
+                stack.pop();
+            }
+            if (stack.top == null)
+                System.out.println("Stack is empty");
         }
-    }
+        }
